@@ -17,7 +17,6 @@ interface ShoppingBagProps {
 export function ShoppingBagProvider({children}: ShoppingBagProps) {
     const { addItem, cartCount } = useShoppingCart()
 
-
     return (
         <ShoppingBagContext.Provider value={{addItem, cartCount}}>
             {children}

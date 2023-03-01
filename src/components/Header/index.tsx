@@ -10,16 +10,20 @@ export function HeaderComponent() {
     const [showAsideShoppingBag, setAsideShoppingBag] = useState(false)
     const { cartCount } = useContext(ShoppingBagContext)
 
+    function changeStatesAside() {
+         setAsideShoppingBag(!showAsideShoppingBag)
+    }
+
 
     return (
         <>
             <Image src={logoImg} alt="" />
-            <span onClick={() => setAsideShoppingBag(!showAsideShoppingBag)}>
+            <span onClick={changeStatesAside}>
             <Handbag size={24} weight="bold" />
             <p>{cartCount}</p>
             </span>
             {showAsideShoppingBag && (
-            <ShoppingBag />
+            <ShoppingBag asideShow={changeStatesAside}/>
             )}
         </>
     )

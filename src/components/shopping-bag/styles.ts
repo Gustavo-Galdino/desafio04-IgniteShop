@@ -13,13 +13,13 @@ export const ShoppingBagContainer = styled('aside', {
 
     width: 480,
     height: '100vh',
-
-    h1: {
-        gridColumn: 'span 2',
-        marginBottom: 32,
-        fontSize: '$ld',
-        color: '$gray100'
-    },
+    
+        h1: {
+            gridColumn: 'span 2',
+            marginBottom: 32,
+            fontSize: '$ld',
+            color: '$gray100',
+        },
 
     '> div': {
         position: 'absolute',
@@ -48,6 +48,15 @@ export const ShoppingBagContainer = styled('aside', {
             },
         },
 
+        span: {
+            background: 0,
+
+            '&:hover': {
+                opacity: 1,
+                cursor: 'auto',
+            }
+        },
+
 
         button: {
             backgroundColor: '$green500',
@@ -73,6 +82,17 @@ export const ShoppingBagContainer = styled('aside', {
                 backgroundColor: '$green300'
             },
         },
+    }
+})
+
+export const CloseContainer = styled('div', {
+    position: 'absolute',
+    top: 24,
+    right: 24,
+    color: '$gray300',
+
+    '&:hover': {
+        cursor: 'pointer',
     }
 })
 
@@ -116,6 +136,11 @@ export const ProductDatails = styled('div', {
         fontSize: '$md',
         fontWeight: 'bold',
         color: '$gray100',
+        background: 0,
+        '&:hover': {
+            opacity: 1,
+            cursor: 'auto',
+        }
     },
 
     '> button': {

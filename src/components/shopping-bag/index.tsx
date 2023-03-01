@@ -1,10 +1,5 @@
-import { stripe } from "@/src/lib/stripe";
-import axios from "axios";
-import { GetStaticPaths, GetStaticProps } from "next";
-import Image from "next/image";
-import { useState } from "react";
-import Stripe from "stripe";
-import { ImageContainer, ShoppingBagContainer, ProductDatails, ProductContainer } from "./styles";
+import { X } from "phosphor-react";
+import { ImageContainer, ShoppingBagContainer, ProductDatails, ProductContainer, CloseContainer } from "./styles";
 
 interface ProductProps {
     product: {
@@ -16,16 +11,24 @@ interface ProductProps {
     }
 }
 
-export function ShoppingBag() {
+interface ShoppingBagProps {
+    asideShow: () => void
+}
+
+export function ShoppingBag({ asideShow }: ShoppingBagProps) {
 
 
 
 
     return (
-        <ShoppingBagContainer> 
-            <h1>Sacola de Compras</h1>
+        <ShoppingBagContainer>
+                <h1>Sacola de Compras</h1>
 
             <ProductContainer>
+                <CloseContainer onClick={asideShow}>
+                    <X size={24} weight="bold" />
+                </CloseContainer>
+
                 <ImageContainer>
                     
                     </ImageContainer>
