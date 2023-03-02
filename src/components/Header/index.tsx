@@ -1,14 +1,15 @@
-import { ShoppingBagContext } from "@/src/context/ShoppingBag";
 import Image from "next/image";
+import Link from "next/link";
 import { Handbag } from 'phosphor-react'
-import { useContext, useState } from "react";
+import { useState } from "react";
+import { useShoppingCart } from "use-shopping-cart";
 import logoImg from '../../assets/logo.svg'
 import { ShoppingBag } from "../shopping-bag";
 
 
 export function HeaderComponent() {
     const [showAsideShoppingBag, setAsideShoppingBag] = useState(false)
-    const { cartCount } = useContext(ShoppingBagContext)
+    const { cartCount } = useShoppingCart()
 
     function changeStatesAside() {
          setAsideShoppingBag(!showAsideShoppingBag)
@@ -17,7 +18,9 @@ export function HeaderComponent() {
 
     return (
         <>
-            <Image src={logoImg} alt="" />
+            <Link href={'/'}>
+                <Image src={logoImg} alt="" />
+            </Link>
             <span onClick={changeStatesAside}>
             <Handbag size={24} weight="bold" />
             <p>{cartCount}</p>

@@ -122,7 +122,10 @@ export const ImageContainer = styled('div', {
 })
 
 export const ProductDatails = styled('div', {   
-    gridTemplateColumns: '1fr 1fr',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    rowGap: '0.375rem',
 
 
     h2: {
@@ -131,12 +134,13 @@ export const ProductDatails = styled('div', {
     },
 
     span: {
-        marginTop: '1rem',
         display: 'block',
         fontSize: '$md',
         fontWeight: 'bold',
         color: '$gray100',
         background: 0,
+        padding: 0,
+
         '&:hover': {
             opacity: 1,
             cursor: 'auto',
@@ -144,7 +148,6 @@ export const ProductDatails = styled('div', {
     },
 
     '> button': {
-        marginTop: '0.5rem',
         border: 0,
         color: '$green500',
         cursor: 'pointer',
@@ -152,6 +155,7 @@ export const ProductDatails = styled('div', {
         fontSize: '$ld',
         transition: 'background-color 0.2s',
         background: 0,
+        marginTop: 4,
 
         '&:hover': {
             color: '$green300'
